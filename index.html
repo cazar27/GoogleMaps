@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>La ruta de la mapatapa</title>
+	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+
+</head>
+<body>
+	<div id="map">
+	</div>
+
+	<div class="toggler">
+
+		<div id="desplegable" class="ui-widget-content ui-corner-all col-xs-12 col-md-4 col-lg-4">
+    <h3 class="ui-widget-header ui-corner-all">Menu</h3>
+    <div id="tabs">
+
+		  <ul>
+		    <li class="col-xs-12"><a href="#tabs-1">Marcadores<span class="glyphicon glyphicon-map-marker"></span></a></li>
+		    <li class="col-xs-12"><a href="#tabs-2">Añadir Establecimiento <span class="glyphicon glyphicon-cutlery"></span></a></li>
+				<li class="col-xs-12"><a href="#tabs-3">Añadir Tapa <span class="glyphicon glyphicon-plus-sign"></span></a></li>
+
+		  </ul>
+
+		<div id="tabs-2">
+    <div>
+      <form action="#" class="form-horizontal" id="establecimiento" name="establecimiento" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <h2 class="pocomargen">Añadir Establecimiento.</h2>
+        </div>
+
+      <div class="form-group">
+          <label for="nombre">Nombre del establecimiento<span class="obligado">*</span></label>
+          <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre del establecimiento" id="nombre" required="">
+      </div>
+
+      <div class="form-group">
+          <label for="descripcion">Descripcion del establecimiento<span class="obligado">*</span></label>
+          <input type="text" class="form-control" name="descripcion" placeholder="Ingrese la descripcion del establecimiento" id="Descripcion" required="">
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Categoria<span class="obligado">*</span></label>
+          <select class="form-control" id="tipo" name="categoria" required="">
+            <option selected="" value="restaurante">Restaurante</option>
+            <option value="cafeteria">Cafeteria</option>
+            <option value="bar">Bar</option>
+            <option value="gourmet">Gourmet</option>
+          </select>
+      </div>
+
+			<div class="form-group">
+          <label for="direccion">Direccion del establecimiento<span class="obligado">*</span></label>
+          <input type="text" class="form-control" name="direccion" placeholder="Ingrese la direccion" id="direccion" required="">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-default btn-success col-xs-12">Insertar Datos</button>
+        <button type="reset" class="btn btn-default btn-danger col-xs-12">Restaurar Datos</button>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div id="tabs-1">
+
+		<label for="establecimientos">Pulse el boton para mostrar los establecimientos</label>
+		<button class="btn btn-primary col-xs-12" id="establecimientos">Mostrar establecimientos</button>
+      <div class="form-group">
+				<label for="cat">Seleccione un tipo de establecimiento para filtar</label>
+          <select class="form-control" id="cat" name="cat" required="">
+            <option selected="" value="restaurante">Restaurante</option>
+	          <option value="cafeteria">Cafeteria</option>
+	          <option value="bar">Bar</option>
+	          <option value="gourmet">Gourmet</option>
+	        </select>
+				</div>
+		<button class="btn btn-primary col-xs-12" id="establecimientos2">Mostrar por tipo</button>
+		<br><br><button class="btn btn-primary col-xs-12" id="limpiar">Limpiar Mapa</button>
+  </div>
+	<div id="tabs-3">
+		<div>
+      <form action="#" class="form-horizontal" id="formTapa" name="establecimiento" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <h2 class="pocomargen">Añadir tapa a establecimiento.</h2>
+        </div>
+
+				<select class="form-control selectLoc" id="nombre_bares" name="nombre_bares" required="">
+					<option value="">No hay restaurantes</option>
+				</select>
+
+      	<div class="form-group">
+          <label for="nombre_tapa">Nombre de la tapa<span class="obligado">*</span></label>
+          <input type="text" class="form-control" name="nombre_tapa" placeholder="Ingrese el nombre de la tapa" id="nombre_tapa" required="">
+      	</div>
+
+      	<div class="form-group">
+				  <label for="nombre">Descripcion de la tapa<span class="obligado">*</span></label>
+						<input type="text" class="form-control" name="descripcion_tapa" placeholder="Ingrese la descripcion de la tapa" id="descripcion_tapa" required="">
+		  	</div>
+
+	      <div class="form-group">
+	        <button type="submit" id="addTapa" class="btn btn-default btn-success col-xs-12">Insertar Datos</button>
+	        <button type="reset" class="btn btn-default btn-danger col-xs-12">Restaurar Datos</button>
+	      </div>
+      </form>
+    </div>
+  </div>
+	</div>
+</div>
+</div>
+
+  <button id="menu" class="btn btn-default ui-state-default ui-corner-all">
+	<span class="glyphicon glyphicon-menu-hamburger	" aria-hidden="true"></span> <span class="glyphicon-class"></span>
+  </button>
+</div>
+<div>
+	<div id="tapas">
+
+	</div>
+</div>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js" type="text/javascript"></script>
+<script src="js/toggle.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATUUiU_j_zjFUS50aWfLjgXIphYxWYR1w&callback=initMap" async defer></script>
+<script src="js/localizaciones.js" type="text/javascript"></script>
+<script src="js/mapa.js" type="text/javascript"></script>
+<script src="js/formularios.js" type="text/javascript"></script>
+<script src="js/funcionAnonima.js" type="text/javascript"></script>
+</body>
+</html>

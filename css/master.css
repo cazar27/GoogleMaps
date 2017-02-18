@@ -1,0 +1,84 @@
+/** {
+		font-size: 2em!important;
+	}*/
+.mini{
+	font-size: 2.5em!important;
+}
+#menu{
+	font-size: 5em!important;
+	position: absolute;
+	float: right;
+	right: 15px;
+	top: 15px;
+}
+
+#directions-panel {
+	margin-top: 20px;
+	background-color: #FFEE77;
+	padding: 10px;
+}
+
+#desplegable {
+	font-size: 3.5em!important;
+  background-color: #e9e9e9;
+  height: 100%;
+  right: 0;
+  top:0;
+  position: absolute;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#map {
+  height: 100%;
+  width: 100%;
+  background-color: #aaa;
+}
+.pocomargen{
+  margin: 5px!important;
+}
+.form-group{
+  margin: 5px!important;
+}
+.obligado{
+  color: red!important;
+}
+
+#directions-panel{
+	visibility: hidden;
+}
+
+div#tapas{
+	font-size: 2.5em!important;
+	background-color: #e9e9e9;
+	width: 80%;
+	margin:10%;
+	height: 0px;
+	bottom: :0;
+	position: absolute;
+	background-color: #e9e9e9;
+}
+
+
+#tapas>div>h2{
+	text-align: right;;
+	color: blue;
+}
+
+#tapas>div>img{
+	border-style: double 2px grey;
+	width: auto;
+	height: 120px;
+}
+.imagenes{
+	width: 50%;
+	height: auto;
+}
